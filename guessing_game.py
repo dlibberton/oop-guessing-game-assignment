@@ -5,16 +5,16 @@
 import random
 
 class GuessingGame:
-    def __init__(self, answer, last_guess):
+    def __init__(self, answer):
         self.answer = answer
-        self.last_guess = last_guess
+        self.last_guess = None
         self.last_result = None
 
     def solved(self):
         return self.last_result == "correct"
 
     def guess(self, number):
-        number = int(number)#for comparison
+        number = int(number)
         if number == self.answer:
             self.last_result = "correct"
         elif number < self.answer:
